@@ -1,0 +1,48 @@
+package Exercicio03;
+
+import java.util.Objects;
+
+public class aluno {
+    private String nome;
+    private int rm;
+
+    public aluno(String nome, int rm) {
+        this.nome = nome;
+        this.rm = rm;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        aluno aluno = (aluno) o;
+        return rm == aluno.rm && Objects.equals(nome, aluno.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, rm);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getRm() {
+        return rm;
+    }
+
+    public void setRm(int rm) {
+        this.rm = rm;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + " | " + "Rm: " + getRm();
+    }
+}
