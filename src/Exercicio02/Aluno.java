@@ -6,9 +6,9 @@ public class Aluno {
     private String nome;
     private int rm;
 
-    public Aluno(String nome, int rm) {
-        this.nome = nome;
+    public Aluno(int rm, String nome) {
         this.rm = rm;
+        this.nome = nome;
     }
 
     @Override
@@ -17,6 +17,8 @@ public class Aluno {
         Aluno aluno = (Aluno) o;
         return rm == aluno.rm && Objects.equals(nome, aluno.nome);
     }
+
+
 
     @Override
     public int hashCode() {
